@@ -26,18 +26,25 @@ function play(pick) {
         alert(`Player ${topLeft} is the winner!`);
     } else if (midLeft !== undefined && midLeft === mid && midLeft === midRight) {
         alert(`Player ${midLeft} is the winner!`);
+        gameFinished();
     } else if (botLeft !== undefined && botLeft === botMid && botLeft === botRight) {
         alert(`Player ${botLeft} is the winner!`);
+        gameFinished();
     } else if (topLeft !== undefined && topLeft === midLeft && topLeft === botLeft) {
         alert(`Player ${topLeft} is the winner!`);
+        gameFinished();
     } else if (topMid !== undefined && topMid === mid && topMid === botMid) {
         alert(`Player ${topMid} is the winner!`);
+        gameFinished();
     } else if (topRight !== undefined &&topRight === midRight && topRight === botRight) {
         alert(`Player ${topRight} is the winner!`);
+        gameFinished();
     } else if (topLeft !== undefined && topLeft === mid && topLeft === botRight) {
-        alert(`Player ${topLeft} is the winner!`);    
+        alert(`Player ${topLeft} is the winner!`);
+        gameFinished();    
     } else if (botLeft !== undefined && botLeft === mid && botLeft === topRight) {
         alert(`Player ${botLeft} is the winner!`);
+        gameFinished();
     }
     
     let boardFull = true;
@@ -47,9 +54,11 @@ function play(pick) {
        }
     } if (boardFull === true) {
         alert(`Cat's game, try again!`)
+        gameFinished();
     }
     console.log(tracker);
 }
-function resetGame() {
-    
+function gameFinished() {
+    document.getElementById("Reset");
+    document.location.href = "";
 }
